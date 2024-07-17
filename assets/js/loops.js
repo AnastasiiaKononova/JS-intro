@@ -89,7 +89,6 @@
 //   console.log(currentPage);
 // } while (currentPage < TOTAL_PAGE_AMOUNT);
 
-
 // порахувати суму чисел від 1 до 20
 
 // 1 2 3 4 5 6 7 8 9 ...
@@ -127,12 +126,7 @@
 
 // console.log(mult);
 
-
-
-
-
 // ------- цикл for ---------------
-
 
 // let currentPage = 1;
 // const TOTAL_PAGE_AMOUNT = 10;
@@ -192,17 +186,17 @@
 // Global
 // Script
 // Block
-// Global > Script > Block
+// // Global > Script > Block
 
-// // Порахувати добуток чисел від -5 до 10
-let mult = 0;
-for (let x = -5; x <= 10; x++) {
-    mult = mult * x;
-}
+// // // Порахувати добуток чисел від -5 до 10
+// let mult = 0;
+// for (let x = -5; x <= 10; x++) {
+//     mult = mult * x;
+// }
 
-console.log(mult);
+// console.log(mult);
 
-    //--------------------------------------------
+//--------------------------------------------
 // передумова; min 0
 // while (condition) {
 //   body
@@ -220,3 +214,85 @@ console.log(mult);
 //---------------------------------------------
 // break; - завершити цикл
 // continue; - завершити поточнц ітерацію і перейти одразу до наступної
+
+// for (let i = 1; i <= 10; i++){
+//     console.log(i*i)
+// }
+
+// const originPassword = "qwerty";
+//   let userPassword = "";
+
+//   while (userPassword !== originPassword) {
+//     userPassword = prompt("Введите пароль:");
+//     if (userPassword === originPassword) {
+//       console.log("Ви успeшно вошли  в систему");
+//     } else {
+//       console.log("Неверный пароль, попробуйте еще  раз.");
+//     }
+//   }
+
+// let sum = 0;
+// for (let i = 1; i <= 100; i++) {
+//     sum += i;
+// }
+// console.log(sum);
+
+// for (let i = 10; i <= 50; i++) {
+//     if (i % 5 === 0) {
+//       console.log(i);
+//     }
+//   }
+
+// const size = Number(prompt("Введіть розмір трикутника:"));
+
+// // for (let rowIterator = 1; rowIterator <= size; rowIterator++) {
+// //   let rowString = "";
+
+// //   for (let colIterator = 1; colIterator <= rowIterator; colIterator++) {
+// //     rowString += "*";
+// //   }
+// //   console.log(rowString);
+// // }
+
+// for (let i = 1; i <= size; i++) {
+//   console.log("*".repeat(i));
+// }
+// const size = 10;
+// for (let rowIterator = 1; rowIterator <= size; rowIterator++) {
+//   let rowString = "";
+
+//   for (let colIterator = 1; colIterator <= size; colIterator++) {
+//     if (rowIterator === 1 || rowIterator === size) {
+//       rowString += " * ";
+//     } else if (
+//       colIterator === 1 ||
+//       colIterator === rowIterator ||
+//       colIterator === size
+//     ) {
+//       rowString += " * ";
+//     } else {
+//       rowString += "   ";
+//     }
+//   }
+//   console.log(rowString);
+// }
+
+const size = 10;
+for (let rowIterator = 0; rowIterator < size; rowIterator++) {
+  let rowString = "";
+
+  for (let colIterator = 1; colIterator <= size; colIterator++) {
+    if (rowIterator === 0 || rowIterator === size-1) {
+      rowString += " * ";
+    } else if (
+      colIterator === 1 ||
+      colIterator === size - rowIterator ||
+      colIterator === size
+    ) {
+      rowString += " * ";
+    } else {
+      rowString += "   ";
+    }
+  }
+  console.log(rowString);
+}
