@@ -168,7 +168,9 @@
 
 
 
-
-
-
+function calcDivisible(a, b) {
+  return a % b == 0
+}
+result1 = calcDivisible(10, 2)  
+result2 = calcDivisible(10, 3)
     
