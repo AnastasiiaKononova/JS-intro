@@ -101,3 +101,90 @@
 // console.log(user3 === user);
 
 
+/ Методи об'єкту
+const user = {
+  // властивості (поля)
+  firstName: 'Test',
+  lastName: 'Testovych',
+  age: 25,
+  password: 'qwerty',
+  // методи
+  // this - контекст (посилання на об'єкт, для якого викликано метод,
+  //                  він перед крапкою при виклику)
+  // Повна форма
+  // getFullName: function () {
+  //   return `${this.firstName} ${this.lastName}`;
+  // },
+  // changePassword: function (newPassw) {
+  //   this.password = newPassw;
+  // },
+  // Скорочена форма
+  // ім'яМетоду(параметри){тіло}
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  changePassword(newPassw) {
+    this.password = newPassw;
+  },
+};
+
+// Виклик методу
+// const userFullName = user.getFullName();
+// console.log(userFullName);
+
+// user.changePassword('123456');
+// console.log('user :>> ', user);
+
+// Task: Написати метод для зміни кольору машини
+// const car = {
+//   brand: 'Skoda',
+//   model: 'Karoq',
+//   year: 2018,
+//   number: '3975',
+//   color: 'white',
+//   changeColor(newColor) {
+//     this.color = newColor;
+//   },
+// };
+
+// car.changeColor('orange');
+// console.log('car :>> ', car);
+
+// Перебрати car за допомогою for..in
+// Результат за допомогою шаблонного літералу вивести у вигляді
+// car.властивість = значення
+// for (key in car) {
+//   console.log(`car : ${key} = ${car[key]}`);
+// }
+
+// Синтаксис обчислювальних властивостей
+
+// const property = 'firstName';
+// console.log(user[property]); // user.firstName
+
+// const userProp = prompt('Input property:');
+// console.log(user[userProp]);
+
+// Перебір об'єкту for..in
+// for (const key in user) {
+//   console.log(key, user[key]);
+// }
+
+// Перегляд об'єкту в консолі
+console.dir(user);
+
+// Функція - об'єкт
+console.dir(function f(q, w) {});
+
+// Вкладені об'єкти
+
+const human = {
+  name: 'Ivo',
+  physParams: {
+    height: 1.8,
+    weight: 75,
+  },
+};
+
+console.log('human :>> ', human);
+console.log(human.physParams.height);
