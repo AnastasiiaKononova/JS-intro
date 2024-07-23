@@ -1,176 +1,290 @@
-// Функції
+/* Функции-констуркторы */
 
-// Повторне використання коду
-// Одна функція - одна відповідальність
-
-// Оголошення функції
-// function fName(param1, param2, ...){
-//   тіло функції
-//   return значення;
+// const cat = {
+//   name: 'Murz',
+//   age: 8,
+//   color: 'grey',
+//   meow: function () {
+//     console.log('meow')
+//   }
 // }
 
-// Виклик функції
-// fName('p1', 'p2', ...)
-//--------------------------------------------
-// в дужках при оголошенні - параметри функції
-// function myFunction(userName) {
-//     const userGreeting = `Hello, ${userName}`;
-//     return userGreeting;
+// const cat2 = {
+//   name: 'Murka',
+//   age: 3,
+//   color: 'red',
+//   meow: function () {
+//     console.log('meow')
 //   }
-  
-//   // const a = myFunction('Ivo'); //  в дужках при виклику - аргументи
-  // console.log('a :>> ', a);
-  
-  // ---------------------------------------------
-  // написати функцію для обчислення суми двох чисел
-  
-//   function sum(par1, par2) {
-//     return par1 + par2;
-//   }
-  
-//   const result = sum(4, 5);
-//   console.log('result :>> ', result);
-  
-//   // написати функцію, яка приймає два параметри a, b і повертає a**b
-  // 2,2 => 4
-//   // 3,4 => 81
-//   function myPow(a, b) {
-//     return a ** b;
-//   }
-  
-//   const pow = myPow(2, 2);
-//   console.log(pow);
-  
-//   // написати функцію для обчислення суми цілих чисел від n1 до n2
-//   // 1, 5  => 1 + 2 + 3 + 4 + 5
-//   // 7, 10 => 7 + 8 + 9 + 10
-  
-//   function sumFromAToB(from, to) {
-//     let sum = 0;
-//     for (let i = from; i <= to; i++) {
-//       sum += i;
-//     }
-//     return sum;
-//   }
-  
-//   console.log('sumFromAToB(1,5) :>> ', sumFromAToB(1, 5));
-//   console.log('sumFromAToB(1,5) :>> ', sumFromAToB(100, 110));
-  
-//   // Task: Написати функцію, яка приймає вік користувача і
-//   // повертає true для повнолітнього користувача,
-//   //          false - для неповнолітнього
-  
-  // function age1(number) {
-  //   if (number >= 18) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
-  // const ourAge = age1(81);
-  // console.log(ourAge);
-  
-  // function age2(number) {
-  //   return number >= 18 ? true : false;
-  // }
-  
-  // const ourAge2 = age2(81);
-  // console.log(ourAge2);
-  
-  // function isAdult(age) {
-  //   return age >= 18;
-  // }
-  
-  // console.log('isAdult :>> ', isAdult(15));
-  
-
-
-  // Способи задання функцій
-
-// Function Declaration / Оголошення функції
-// function fName(param1, param2, ...){
-//   тіло функції
-//   return значення;
 // }
 
-// Function Expression / Вираз функції
-// const fName = function (param1, param2, ...){
-//   тіло функції
-//   return значення;
-// }
-// // fName(...)
-
-// // // ! Використовується тільки післі оголошення
-
-// const calcSum = function (a, b) {
-//   return a + b;
-// };
-
-// console.log('calcSum(1,2) :>> ', calcSum(1, 2));
-
-// // Переписати функцію для піднесення числа до степеня
-// // в формі Function Expression
-
-// // const calcPow = function (a, b) {
-// //   return a ** b;
-// // };
-// // console.log(calcPow(2, 2));
-
-// // Значення за умовчуванням
-// // ! Оголошуються після обов'язкових
-
-// const value = prompt('Input number');
-// console.log('value :>> ', value === '');
-
-// // Знайти суму двох чисел,
-// // якщо друге число не передане, то вважати його 1
-
-// /**
-//  * Calculates summ of two numbers
-//  * @param {number} a - First summand
-//  * @param {number} [b = 1] - Second summand
-//  * @returns {number} Summ of arguments
-//  */
-// function sum2(a, b = 1) {
-//   // if(b === undefined) { b = 1; }
-//   return a + b;
-// }
-
-
-// console.log('sum2(2,3) :>> ', sum2(2, 3));
-// console.log('sum2(2) :>> ', sum2(2));
-
-// // Переписати так, щоб, якщо користувач передає тільки 1 параметр, то це to,
-// // тоді from вважати 1
-
-// // Прописати JSDoc для sumFromAToB або функції піднесення до степеня
-// /**
-//  * Function for calculating the sum of given numbers
-//  * @param {number} to - First number
-//  * @param {number} [from = 1] - Second number
-//  * @returns {number} return sum from number to number
-// //  */
-// function sumFromAToB(to, from = 1) {
-//   let sum = 0;
-//   for (let i = from; i <= to; i++) {
-//     sum += i;
+// const cat3 = {
+//   name: 'Barsik',
+//   age: 2,
+//   color: 'black',
+//   meow: function () {
+//     console.log('meow')
 //   }
-//   return sum;
 // }
 
-// let sumto1 = sumFromAToB(10, -10);
-// console.log(sumto1);
-// let sumto10 = sumFromAToB(10);
-// console.log(sumto10);
+/* Функции-констуркторы - особенный режим работы функцииб при котором она создает объект по заданному шаблону и 
+возвращает его в результате работы
+*/
 
-// //
-// prompt();
+// function Cat(name, age, color) {
+//   /// До всего-всего ключевое слово new создает новый объект
+//   /// посилання на цей конкретний новостворений обєкт кладеться в this
+//   ///this = {}
+//   this.name = name;
+//   this.age = age;
+//   this.color = color;
+//   this.meow = function () {
+//     console.log("meoooow");
+//   };
+// }
 
+// const cat1 = new Cat("Murz", 8, "grey");
 
+// const cat2 = new Cat("Murka", 2, "red");
 
-function calcDivisible(a, b) {
-  return a % b == 0
+// const cat3 = new Cat("Barsik", 2, "black");
+
+// // /* Написати функцию-конструктор для юзера
+// Властивості
+// - імя
+// -прізвище
+// -вік
+// - мейл
+
+// метод
+// - sayHello
+// */
+
+// function User(firstName, lastName, age, mail) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.age = age;
+//   this.mail = mail;
+//   this.sayHello = function () {
+//     console.log(`${this.firstName} say: 'Hello'`);
+//   };
+// }
+
+// const user1 = new User("John", "Doe", 18, "hhfgurhgh");
+// const user2 = new User("Jane", "Pepper", 25, "6tr7ygergfy");
+
+/*Створити функцію-конструктор для сутності країна
+- назва
+кількість населення 
+площа
+
+Метод 
+-щільність населення 
+   кількість населення подалити на площу*/
+
+function Country(name, population, area) {
+  this.name = name;
+  this.population = population;
+  this.area = area;
+  this.getDensity = function () {
+    return this.population / this.area;
+  };
 }
-result1 = calcDivisible(10, 2)  
-result2 = calcDivisible(10, 3)
-    
+
+const ukr = new Country("Ukraine", 43790000, 603628);
+
+/* 
+   Написати функцію-конструктор  для авто 
+   - name
+   - maxSpeed
+   - speed
+   
+   Реалізувати методи 
+   - accelerate (value) прийняти в функцію величину в км за час і збільшитти поточну швидкість на вказану величину
+   -deaccelerate (value) прийняти величину і зменшити поточну швидкість
+   - stop () - зупинка машини, швидкість=0
+   */
+
+// function Car(name, maxSpeed) {
+//   this.name = name;
+//   this.maxSpeed = maxSpeed;
+//   this.maxSpeed = 0;
+
+//   this.accelerate = function (value = 0) {
+//     if (isNaN(value)) {
+//       return false; // Error
+//     }
+//     this.speed += value;
+//     if (this.speed > maxSpeed) {
+//       this.speed = maxSpeed;
+//     }
+//     return this.speed;
+//   };
+
+//   this.deaccelerate = function (value = 0) {
+//     this.speed -= value;
+//     if (isNaN(value)) {
+//       return false; // Error
+//     }
+//     if (this.speed < 0) {
+//       this.speed = 0;
+//     }
+//     return this.speed;
+//   };
+
+//   this.stop = function () {
+//     return (this.speed = 0);
+//   };
+// }
+
+// const car = new Car("lanos", 100); //Екземпляр
+
+/* Прототипи */
+
+function Rabbit(name, color) {
+  this.name = name;
+  this.color = color;
+
+  
+}
+
+function RabbitLogic() {
+  this.jump = function () {
+    console.log(`${this.name} is jumping`);
+  };
+  this.eat = function() {
+    console.log(`${this.name} says nyam-nyam`);
+  }
+}
+
+const rabLogic = new RabbitLogic();
+
+Rabbit.prototype = rabLogic;
+console.log(rabLogic)
+
+const rabbit1 = new Rabbit('Lucky', 'grey');
+rabbit1.eat();
+
+rabLogic.bite = function() {
+console.log(`${this.name} bite you`);
+}
+
+
+/*Переписати котів та юзерів на окремо обєкт за даними - 
+окремо обєкт з методами
+і звязати їх прототипом */
+
+ function Cat(name, age, color) {
+  this.name = name;
+  this.age = age;
+  this.color = color;
+ }
+
+ function CatPrototype() {
+  this.meow = function () {
+        console.log("meoooow");
+      }
+ }
+
+const catProto = new CatPrototype();
+Cat.prototype = catProto;
+
+ const cat1 = new Cat("Murz", 8, "grey");
+
+  const cat2 = new Cat("Murka", 2, "red");
+
+const cat3 = new Cat("Barsik", 2, "black");
+
+
+
+//old prototype syntax
+
+// function User(firstName, lastName, age, mail) {
+//   this.firstName = firstName;
+//   this.lastName = lastName;
+//   this.age = age;
+//   this.mail = mail;
+// }
+
+// function UserPrototype() {
+// this.sayHello = function () {
+//   console.log(`${this.firstName} say: 'Hello'`);
+// }
+// }
+
+// const userProto= new UserPrototype();
+// User.prototype = userProto;
+
+// const user1 = new User("John", "Doe", 18, "hhfgurhgh");
+// const user2 = new User("Jane", "Pepper", 25, "6tr7ygergfy");
+
+
+// new class syntax
+
+class User {
+  constructor (firstName, lastName, age, mail) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.mail = mail;
+  }
+
+  sayHello() {
+    console.log(`${this.firstName} say: 'Hello'`);
+  }
+
+}
+
+const user1 = new User();
+
+/* __proto__ - літерально заданий прототип для одного конкретного обєкта*/
+
+const cat = {
+  name: 'Musya',
+  age: 8
+}
+
+const catProtoObj = {
+  run() {
+    console.log('тигидик')
+  }
+}
+
+cat.__proto__ = catProtoObj;
+
+/* Переписати машину на клас */
+
+
+class Car (name, maxSpeed) {
+  this.name = name;
+  this.maxSpeed = maxSpeed;
+  this.maxSpeed = 0;
+
+ accelerate(value = 0) {
+    if (isNaN(value)) {
+      return false; // Error
+    }
+    this.speed += value;
+    if (this.speed > maxSpeed) {
+      this.speed = maxSpeed;
+    }
+    return this.speed
+  }
+
+  deaccelerate (value = 0) {
+    if (isNaN(value)) {
+      return false; // Error
+    }
+    this.speed -= value;
+    if (this.speed < 0) {
+      this.speed = 0;
+    }
+    return this.speed
+  }
+
+  stop () {
+    return (this.speed = 0);
+  };
+}
+
+const car = new Car("lanos", 100); //Екземпляр
