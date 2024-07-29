@@ -182,11 +182,11 @@
 // // Number.isNaN(NaN)
 // // Не мажна перевіряти NaN===NaN
 
-const num1 = Number(prompt('Введите первое число'));
-const num2 = Number(prompt('Введите второе число'));
-if ((num1+num2) %5 === 0) {
-    alert('Сумма кратна 5');
-} else {
-    alert('Сумма не кратна 5');
-}
+// const num1 = Number(prompt('Введите первое число'));
+// const num2 = Number(prompt('Введите второе число'));
+// if ((num1+num2) %5 === 0) {
+//     alert('Сумма кратна 5');
+// } else {
+//     alert('Сумма не кратна 5');
+// }
 
