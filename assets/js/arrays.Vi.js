@@ -1,4 +1,4 @@
-/ const usersList = {
+// / const usersList = {
     //   1: { id: 1, name: 'Test' },
     //   2: { id: 2, name: 'Ivo' },
     // };
