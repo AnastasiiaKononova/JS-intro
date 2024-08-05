@@ -37,3 +37,17 @@ MyArray.prototype = MyArrayProto();
 
 
 const arr = new MyArray();
+
+/*
+ДЗ: 
+доповнити колекцію MyArray реалізацією методів нативного масива:
+- concat
+- at
+- fill
+- filter
+- find
+- join
+- map
+- slice
+- sort
+*/
