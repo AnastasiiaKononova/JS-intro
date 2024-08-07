@@ -1,150 +1,220 @@
-// // рядки - псевдомасиви
+// // // рядки - псевдомасиви
 
-// const str = 'qwerty';
+// // const str = 'qwerty';
 
-// console.log(str.length);
-// console.log(str[1]);
+// // console.log(str.length);
+// // console.log(str[1]);
 
-// // Рядки не можна змінювати !!!
+// // // Рядки не можна змінювати !!!
 
-// // str[5] = 'q';
-// const str1 = str.slice(0, 5) + 'q';
+// // // str[5] = 'q';
+// // const str1 = str.slice(0, 5) + 'q';
 
-// // 'qwerty'.startsWith('qw')
-// // 'qwerty'.endsWith('t5y')
-// // 'qwerty'.includes('wer')
-// // 'Qwerty'.toLowerCase()
-// // 'Qwerty'.toUpperCase();
+// // // 'qwerty'.startsWith('qw')
+// // // 'qwerty'.endsWith('t5y')
+// // // 'qwerty'.includes('wer')
+// // // 'Qwerty'.toLowerCase()
+// // // 'Qwerty'.toUpperCase();
 
-// // Task: Написати функцію, яка за рядком ("Ivo Smith") сформує рядок з ініціалами ("IS")
+// // // Task: Написати функцію, яка за рядком ("Ivo Smith") сформує рядок з ініціалами ("IS")
 
-// function getInitials(name) {
-//   // знайти пробіл
-//   const spaceIndex = name.indexOf(' ');
-//   console.log(spaceIndex);
+// // function getInitials(name) {
+// //   // знайти пробіл
+// //   const spaceIndex = name.indexOf(' ');
+// //   console.log(spaceIndex);
 
-//   // return 1й символ + символ після пробіла
-//   return (name[0] + name.slice(spaceIndex + 1, spaceIndex + 2)).toUpperCase();
-// }
+// //   // return 1й символ + символ після пробіла
+// //   return (name[0] + name.slice(spaceIndex + 1, spaceIndex + 2)).toUpperCase();
+// // }
 
-// const initials = getInitials('victoriia shevchenko');
-// console.log(initials);
-
-
-
-/* Методи примітивів */
+// // const initials = getInitials('victoriia shevchenko');
+// // console.log(initials);
 
 
-/*
-При розробці js стояло дві мети:
-1. Зробити примітиви легкими (не робити їх об'єктами)
-2. Надати розробникам функціонал (властивості та методи) для зручної роботи
+
+// /* Методи примітивів */
+
+
+// /*
+// При розробці js стояло дві мети:
+// 1. Зробити примітиви легкими (не робити їх об'єктами)
+// 2. Надати розробникам функціонал (властивості та методи) для зручної роботи
     
-Примітиви - це примітиви.
+// Примітиви - це примітиви.
    
-*/
+// */
 
 
-let a = 'hello'; // створюю примітивне значення, кладу його в змінну
+// let a = 'hello'; // створюю примітивне значення, кладу його в змінну
 
-a.length // викликаю властивість примітива
-/*
+// a.length // викликаю властивість примітива
+// /*
 
-1. Під капотом рушія js неявним чином створюєтся Об'єкт-обгортка
-new String('hello')
-2. У новоствореного об'єкта викликається потрібна властивість або метод, результат повертається на місце виклику
-3. Об'єкт-обгортка знищується, примітив залишається примітивом.
-*/
+// 1. Під капотом рушія js неявним чином створюєтся Об'єкт-обгортка
+// new String('hello')
+// 2. У новоствореного об'єкта викликається потрібна властивість або метод, результат повертається на місце виклику
+// 3. Об'єкт-обгортка знищується, примітив залишається примітивом.
+// */
 
-// Boolean
-
-
-let bool = true;
-
-// Number
-
-Number.isNaN() /// друга версія глобальної функції isNaN
+// // Boolean
 
 
-/// String
+// let bool = true;
+
+// // Number
+
+// Number.isNaN() /// друга версія глобальної функції isNaN
 
 
-let str = 'lorem ipsum dolor sit amet';
+// /// String
+
+
+// let str = 'lorem ipsum dolor sit amet';
            
 
 
-str.at(0) /// === str[0] - повертає символ рядка за вказаним індексом
-// повертає undefined, якщо переданий індекс виходить за межі рядка
+// str.at(0) /// === str[0] - повертає символ рядка за вказаним індексом
+// // повертає undefined, якщо переданий індекс виходить за межі рядка
+
+// /*
+
+// str.charCodeAt() // повертає unicode-номер символа, що стоїть за вказаним індексом
+
+// */
+// let str2 = 'hello';
+
+// str.concat(' ', str2); // конкатенація рядків
+
+
+// str.includes('a') // шукає переданий підрядок у початковому рядку
+
+
+
+// str.indexOf() // повертає індекс першого входження підрядка в рядок. Якщо нема = -1
+
+
+// str.repeat() // повторює і склеює рядки задану кількість разів
+
+
+
+// //str.replace(str1, str2) // шукає входження str1 в рядку і замінює їх на str2. Може працювати як з підрядками, так і регулярними виразами 
+
+// /*
+
+// str.slice() // копіює в новий рядок вказану частину від початкового індексу до кінечного
+
+
+// //str.split(separator) //  перетворювати рядок тексту на Array,тобто розбивати рядок на масив одиниць, використовуючи вказаний сепаратор. Split - зворотня операція до методу масиву join()
+
+
+// str.trim() // обрізає зайві пробіли на початку та в кінці рядка
+
+
+// str.toUpperCase() // перетворює в верхній регістр (великі літери)
+// str.toLowerCase() // перетворює в нижній регістр (маленькі літери)
+
+// str.toLocalUpperCase()// 
+
+// function checkEqString(str1, str2) {
+//    return str1.toLowerCase() === str2.toLowerCase();
+// }
+
+// checkEqString('check', 'check') // true
+// checkEqString('CHECK', 'check') // true
+// checkEqString('cheCK', 'CHeck') // true
+
+
+
+// /*
+// Написати функцію, яка приймає рядок тексту, що містить різні слова. Повернути рядок, в якому кожне нове слово - з великої літери
+
+// */
+
+// //1
+// /*
+// function capitalizeString(str) {
+//     const arr = str.split(' ');
+//     for (let i = 0; i < arr.length; i++) {
+//        let firstLetter = arr[i][0];
+//        let upper = firstLetter.toUpperCase();
+//         arr[i] = upper + arr[i].slice(1);
+//     }
+//     let res = arr.join(' ');
+//     return res;
+// }
+// */
+
+
+// function capitalizeString(str) {
+//     return str.split(' ').map((word) => word.at(0).toUpperCase().concat(word.slice(1))).join(' ');
+// }
+
+
 
 /*
-
-str.charCodeAt() // повертає unicode-номер символа, що стоїть за вказаним індексом
-
+Таски:
+1. Написати функцію, яка приймає рядок тексту і має всередині масив з "забороненими словами". Повертає true, якщо рядок містить заборонене слово, і false, якщо не містить
+const checkArr = ['xxx', 'viagra', 'spam']
 */
-let str2 = 'hello';
 
-str.concat(' ', str2); // конкатенація рядків
-
-
-str.includes('a') // шукає переданий підрядок у початковому рядку
-
-
-
-str.indexOf() // повертає індекс першого входження підрядка в рядок. Якщо нема = -1
-
-
-str.repeat() // повторює і склеює рядки задану кількість разів
-
-
-
-//str.replace(str1, str2) // шукає входження str1 в рядку і замінює їх на str2. Може працювати як з підрядками, так і регулярними виразами 
+const checkArr = ['xxx', 'viagra', 'spam', 'XxXxX']
 
 /*
-
-str.slice() // копіює в новий рядок вказану частину від початкового індексу до кінечного
-
-
-//str.split(separator) //  перетворювати рядок тексту на Array,тобто розбивати рядок на масив одиниць, використовуючи вказаний сепаратор. Split - зворотня операція до методу масиву join()
-
-
-str.trim() // обрізає зайві пробіли на початку та в кінці рядка
-
-
-str.toUpperCase() // перетворює в верхній регістр (великі літери)
-str.toLowerCase() // перетворює в нижній регістр (маленькі літери)
-
-str.toLocalUpperCase()// 
-
-function checkEqString(str1, str2) {
-   return str1.toLowerCase() === str2.toLowerCase();
-}
-
-checkEqString('check', 'check') // true
-checkEqString('CHECK', 'check') // true
-checkEqString('cheCK', 'CHeck') // true
-
-
-
-/*
-Написати функцію, яка приймає рядок тексту, що містить різні слова. Повернути рядок, в якому кожне нове слово - з великої літери
-
-*/
-
-//1
-/*
-function capitalizeString(str) {
-    const arr = str.split(' ');
-    for (let i = 0; i < arr.length; i++) {
-       let firstLetter = arr[i][0];
-       let upper = firstLetter.toUpperCase();
-        arr[i] = upper + arr[i].slice(1);
+function isSpam(str, badWordsArray) {
+    for (let i = 0; i < badWordsArray.length; i++) {
+        if(str.toLowerCase().includes(badWordsArray[i].toLowerCase())){
+            return true
+        }
     }
-    let res = arr.join(' ');
-    return res;
+    return false
 }
 */
 
+function isSpam(str, badWordsArray){
+   return badWordsArray.filter((badWord) => str.toLowerCase().includes(badWord.toLowerCase())).length !== 0;
+}
 
-function capitalizeString(str) {
-    return str.split(' ').map((word) => word.at(0).toUpperCase().concat(word.slice(1))).join(' ');
+
+/*
+2. Написати функцію truncate() яка приймає рядок і задану довжину.
+Якщо рядок довший за вказане число, то результатом повертається обрізаний рядок, в кінці якого - "..."
+Якщо рядок початково менший, то нічого не обрізається
+*/
+
+/*
+function truncate(str, length) {
+    if(str.length <= length) {
+        return str;
+    }
+    return str.slice(0, length).concat('...');
+}
+*/
+
+function truncate(str, length) {
+    return (str.length <= length) ? str : str.slice(0, length).concat('...');
+}
+
+
+/*
+написати функцію, яка приймає рядок і повертає true, якщо рядок є паліндромом і false, якщо не є
+Паліндром - це рядок, який однаково читається з обох боків
+isPalindrom('hannah') // true
+isPalindrom('mama') // false
+isPalindrom('racecar') // true
+isPalindrom('computer') // false
+*/
+
+/* 
+function isPalindrom(str) {
+const checkStr = str.toLowerCase();
+const letterArr = checkstr.split('');
+const resultStr = letterArr.reverse().join('');
+return resultStr === checkStr;
+}
+
+
+*/
+
+function isPalindrom(str) {
+   return str.toLowerCase().split('').reverse().join('') === str.toLowerCase()
 }
