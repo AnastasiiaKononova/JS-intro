@@ -94,7 +94,6 @@ try {
   console.log('a :>> ', a);
   
   try {
-    const c = a + b; // код з потенційною помилкою
     console.log('Hello after error');
   } catch (err) {
     console.log('err :>> ', err);
@@ -183,4 +182,6 @@ try {
   }
   
   console.log('first');
-  
+
+
+
