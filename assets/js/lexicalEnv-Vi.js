@@ -3,16 +3,49 @@
 // Змінні, оголошені поза будь-яким блоком - глобальні, видно всім блокам (Scope - Script)
 // Змінні, оголошені усередині блоку, тобто в {} - локальні, видно тільки всередині блоку (Scope - Block/Local)
 
-const globalVar = 'global';
+// const globalVar = 'global';
 
-if (true) {
-  const localVarIn1If = 'local in 1 if';
+// if (true) {
+//   const localVarIn1If = 'local in 1 if';
+//   if (true) {
+//     const localVarIn2If = 'local in 2 if';
+
+//     console.log('globalVar :>> ', globalVar);
+//     console.log('localVarIn1If :>> ', localVarIn1If);
+//     console.log('localVarIn2If :>> ', localVarIn2If);
+//   }
+// }
+
+/// глобальна область видимості (global scope)
+let variable = "John";
+
+function printName() {
+  let variable = "Rick";
+  console.log(variable);
+  /* 
+    Перш за все шукається локальна змінна name,
+    Якщо її не знайдено - буде шукатися в батьківській області видимості
+    */
+
+  function sayHello() {
+    let variable = "Nick";
+    console.log(`${variable} say Hello`);
+    sayHello();
+  }
+  printName();
+  function changeName() {
+    variable = "Jake";
+  }
+
+  //changeName();
+  printName();
   if (true) {
-    const localVarIn2If = 'local in 2 if';
-
-    console.log('globalVar :>> ', globalVar);
-    console.log('localVarIn1If :>> ', localVarIn1If);
-    console.log('localVarIn2If :>> ', localVarIn2If);
+    /// блочна область видимості
+    let a = "hello";
+  }
+  // a створена всередині if
+  function fn() {
+    //локальна область видимості
   }
 }
 
@@ -73,7 +106,7 @@ if (true) {
 
 // Ex.: використовуючи замикання, реалізувати лічильник
 
-function counter () {
+function counter() {
   let i = 0;
 
   return function () {
@@ -82,15 +115,15 @@ function counter () {
 }
 
 const counter1 = counter();
-console.log('counter1() :>> ', counter1());
-console.log('counter1() :>> ', counter1());
-console.log('counter1() :>> ', counter1());
-console.log('counter1() :>> ', counter1());
-console.log('counter1() :>> ', counter1());
+console.log("counter1() :>> ", counter1());
+console.log("counter1() :>> ", counter1());
+console.log("counter1() :>> ", counter1());
+console.log("counter1() :>> ", counter1());
+console.log("counter1() :>> ", counter1());
 
 // сюди повертається інший інстанс функції зі своїм оточенням
 const counter2 = counter();
-console.log('counter2() :>> ', counter2());
-console.log('counter2() :>> ', counter2());
+console.log("counter2() :>> ", counter2());
+console.log("counter2() :>> ", counter2());
 
-console.log('counter1() :>> ', counter1());
+console.log("counter1() :>> ", counter1());
