@@ -5,62 +5,61 @@
 // let variable = 'John';
 
 function printName() {
-    let variable = 'Rick';
-   console.log(variable);
+  let variable = "Rick";
+  console.log(variable);
 
-   return function (){
+  return function () {
     console.log(`${variable} say Hello`); /// Замикання - це те, що ось ця внутрішня функція ЗАПАМ'ЯТАЛА значення variable
-}
-
+  };
 }
 
 const result = printName(); // printName відпрацювала і вмерла
 
-function makeCounter(){
-    let i = 0;
-    let j = 5;
-    return function() {
-//           debugger;
-        return i++;
-    }
+function makeCounter() {
+  let i = 0;
+  let j = 5;
+  return function () {
+    //           debugger;
+    return i++;
+  };
 
-    /// на цьому функція makeCounter всьо
+  /// на цьому функція makeCounter всьо
 }
 
 const firstCounter = makeCounter();
 
 const secondCounter = makeCounter();
 
-function fullName(lastName){
-    return function(firstName) {  // lastName буде запам'ятовуватись із
-        return `${firstName} ${lastName}`;
-    }
+function fullName(lastName) {
+  return function (firstName) {
+    // lastName буде запам'ятовуватись із
+    return `${firstName} ${lastName}`;
+  };
 }
 
-const family = fullName('Doe');
+const family = fullName("Doe");
 // family('John')
 
-const liFamily = fullName('Li');
-liFamily('John') // John Li
-liFamily('Rick li') // rick li
+const liFamily = fullName("Li");
+liFamily("John"); // John Li
+liFamily("Rick li"); // rick li
 
-
-function getURL(protocol){
-    return function (domain) {
-        return `${protocol}://${domain}`; 
-    }
+function getURL(protocol) {
+  return function (domain) {
+    return `${protocol}://${domain}`;
+  };
 }
 
-const https = getURL('https'); ///  запам'ятала протокол https
+const https = getURL("https"); ///  запам'ятала протокол https
 //  https('google.com');
-// https('wikipedia.org'); 
+// https('wikipedia.org');
 
-const ftp = getURL('ftp'); // повертається посилання на внутрішню функцію, яка запам'ятала ftp
+const ftp = getURL("ftp"); // повертається посилання на внутрішню функцію, яка запам'ятала ftp
 // ftp('google.com') ---> ftp://google.com
 
-const ws = getURL('ws') // websocket
+const ws = getURL("ws"); // websocket
 
-const urlCreater = protocol => domain => `${protocol}://${domain}`;
+const urlCreater = (protocol) => (domain) => `${protocol}://${domain}`;
 /*
 Створити функцію createAdder, яка приймає параметр m і повертає функцію, що приймає параметр n і повертає суму m + n
 // createAdder(10) -> inner(20) // 10+20 
@@ -73,11 +72,10 @@ const urlCreater = protocol => domain => `${protocol}://${domain}`;
 //     }
 //  }
 
-const createAdder = m => n => n+m;
+const createAdder = (m) => (n) => n + m;
 
- const inner = createAdder(10);
+const inner = createAdder(10);
 const inner2 = createAdder(50);
-
 
 /*  Каррування (currying) - це процес перетворення функції, яка приймає n аргументів на n функцій, які приймають 1 або більше аргументів
 Зниження арності функції
@@ -87,7 +85,7 @@ const inner2 = createAdder(50);
 // https://google.com/path?key1=value2
 
 function URL(protocol, domain, path, queryParams) {
-    return `${protocol}://${domain}/${path}?${queryParams}`
+  return `${protocol}://${domain}/${path}?${queryParams}`;
 }
 // function fullURL(protocol) {
 //     return function(domain) {
@@ -99,29 +97,68 @@ function URL(protocol, domain, path, queryParams) {
 //     }
 // }
 
-const fullURL = protocol => domain => path => (queryParams = '') => `${protocol}://${domain}/${path}${queryParams ? `?${queryParams}` : ''}`;
+const fullURL =
+  (protocol) =>
+  (domain) =>
+  (path) =>
+  (queryParams = "") =>
+    `${protocol}://${domain}/${path}${queryParams ? `?${queryParams}` : ""}`;
 
-const URLhttp = fullURL('http');
-const URLdom = URLhttp('mysait.com'); // http, 'mysait'
+const URLhttp = fullURL("http");
+const URLdom = URLhttp("mysait.com"); // http, 'mysait'
 
-const URLpath = URLdom('index');
+const URLpath = URLdom("index");
 //const URLquery = URLpath('key1=valu1');
 
-const doneURL = fullURL('http')('masait.com')('page.html')('key=value');
-
-
+const doneURL = fullURL("http")("masait.com")("page.html")("key=value");
 
 ///// об'єкт і замикання
 
 function makeAPICounter() {
-    let count = 0;
+  let count = 0;
+  return {
+    increment() {
+      return ++count;
+    },
+    decrement() {
+      return --count;
+    },
+  };
+}
+const objCounter = makeAPICounter(); //  повертається об'єкт, який має два методи, що зберігають count в замиканні
+
+/*
+Написати функцію, що повертає об'єкт з методами push(), pop(), які додають в кінець і відповідно видаляють з кінця елементи масива, що зберігається у замиканні
+*/
+
+// function makeArray(...arr) {
+//   //   const arr = [...items];
+//   return {
+//     push: function (v) {
+//       arr.push(v);
+//       return this;
+//     },
+//     pop: function () {
+//       arr.pop();
+//       return this;
+//     },
+//     toArray: () => arr,
+//   };
+// }
+
+/*
+Написати функцію, що повертає об'єкт з методами push(), pop(), які додають в кінець і відповідно видаляють з кінця елементи масива, що зберігається у замиканні
+*/
+
+
+function makeArray(){
+    const arr = [];
     return {
-        increment() {
-            return ++count;
+        push: function(v) {
+            return arr.push(v);
         },
-        decrement() {
-            return --count;
+        pop: function(){
+            return arr.pop()
         }
     }
 }
-const objCounter = makeAPICounter(); //  повертається об'єкт, який має два методи, що зберігають count в замиканні
